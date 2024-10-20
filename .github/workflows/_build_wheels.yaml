@@ -17,10 +17,10 @@ jobs:
           - { os: ubuntu-latest, arch: x86_64, build: "*[13579]-*" }
           - { os: ubuntu-latest, arch: x86_64, build: "*[02468]t-*" }
           - { os: ubuntu-latest, arch: x86_64, build: "*[13579]t-*" }
-          - { os: namespace-profile-default-arm64, arch: aarch64, build: "*[02468]-*" }
-          - { os: namespace-profile-default-arm64, arch: aarch64, build: "*[13579]-*" }
-          - { os: namespace-profile-default-arm64, arch: aarch64, build: "*[02468]t-*" }
-          - { os: namespace-profile-default-arm64, arch: aarch64, build: "*[13579]t-*" }
+          - { os: namespace-profile-arm64-2x, arch: aarch64, build: "*[02468]-*" }
+          - { os: namespace-profile-arm64-2x, arch: aarch64, build: "*[13579]-*" }
+          - { os: namespace-profile-arm64-2x, arch: aarch64, build: "*[02468]t-*" }
+          - { os: namespace-profile-arm64-2x, arch: aarch64, build: "*[13579]t-*" }
     steps:
       - uses: actions/checkout@v4
         with:
