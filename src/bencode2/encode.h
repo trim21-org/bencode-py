@@ -74,7 +74,7 @@ static void encodeDict(EncodeContext *ctx, py::handle obj) {
     for (auto i = 1; i < l; i++) {
         auto currentKey = m[i].first;
         if (currentKey == lastKey) {
-            throw EncodeError(fmt::format("found duplicated keys {}", lastKey));
+            throw EncodeError(std::format("found duplicated keys {}", lastKey));
         }
 
         lastKey = currentKey;
@@ -124,7 +124,7 @@ static void encodeDictLike(EncodeContext *ctx, py::handle h) {
     for (auto i = 1; i < l; i++) {
         auto currentKey = m[i].first;
         if (currentKey == lastKey) {
-            throw EncodeError(fmt::format("found duplicated keys {}", lastKey));
+            throw EncodeError(std::format("found duplicated keys {}", lastKey));
         }
 
         lastKey = currentKey;
