@@ -29,7 +29,7 @@ else:
     module = Pybind11Extension(
         "bencode2.__bencode",
         sources=sorted(glob("./src/bencode2/*.cpp")),
-        include_dirs=["./src/bencode2", "./vendor/fmt/include"],
+        include_dirs=["./src/bencode2"],
         define_macros=macro,
         extra_compile_args=extra_compile_args,
     )

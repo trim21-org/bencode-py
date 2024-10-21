@@ -1,12 +1,9 @@
 #pragma once
-#define FMT_HEADER_ONLY
 
+#include <format>
 #include <stdint.h>
 #include <string>
 #include <unordered_set>
-
-#include <fmt/compile.h>
-#include <fmt/core.h>
 
 #include "common.h"
 
@@ -50,12 +47,12 @@ public:
 
     void writeSize_t(size_t val) {
         bufferGrow(20);
-        fmt::format_to(std::back_inserter(buffer), "{}", val);
+        std::format_to(std::back_inserter(buffer), "{:d}", val);
     }
 
     void writeLongLong(int64_t val) {
         bufferGrow(20);
-        fmt::format_to(std::back_inserter(buffer), "{}", val);
+        std::format_to(std::back_inserter(buffer), "{:d}", val);
     }
 
     void writeChar(const char c) {
