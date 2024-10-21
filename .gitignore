@@ -1,6 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/c++,python,c,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++,python,c,visualstudiocode
 
+.vscode/
 cmake-build-debug/
 ### Cython ###
 # Cython recompiles C/C++ files so no need to keep these.
