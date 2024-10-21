@@ -1,9 +1,8 @@
 #define FMT_HEADER_ONLY
 
-#include <string>
-
-#include <fmt/core.h>
+#include <format>
 #include <pybind11/pybind11.h>
+#include <string>
 
 #include "common.h"
 #include "overflow.h"
@@ -14,7 +13,7 @@ static py::object decodeAny(const char *buf, Py_ssize_t *index, Py_ssize_t size)
 
 #define decodeErrF(f, ...)                                                                         \
     do {                                                                                           \
-        throw DecodeError(fmt::format(f, ##__VA_ARGS__));                                          \
+        throw DecodeError(std::format(f, ##__VA_ARGS__));                                          \
     } while (0)
 
 static py::object decodeInt(const char *buf, Py_ssize_t *index, Py_ssize_t size) {
@@ -27,7 +26,7 @@ static py::object decodeInt(const char *buf, Py_ssize_t *index, Py_ssize_t size)
     }
 
     if (index_e == 0) {
-        throw DecodeError(fmt::format("invalid int, missing 'e': %zd", *index));
+        throw DecodeError(std::format("invalid int, missing 'e': %zd", *index));
     }
 
     // malformed 'ie'

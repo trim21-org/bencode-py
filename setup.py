@@ -18,7 +18,7 @@ if (
     )
 else:
 
-    macro = [("FMT_HEADER_ONLY", "")]
+    macro = []
 
     extra_compile_args = None
     # if os.environ.get("BENCODE_CPP_DEBUG") == "1":
@@ -29,9 +29,10 @@ else:
     module = Pybind11Extension(
         "bencode2.__bencode",
         sources=sorted(glob("./src/bencode2/*.cpp")),
-        include_dirs=["./src/bencode2", "./vendor/fmt/include"],
+        include_dirs=["./src/bencode2"],
         define_macros=macro,
         extra_compile_args=extra_compile_args,
+        cxx_std=20,
     )
 
     setup(
