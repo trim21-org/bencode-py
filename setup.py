@@ -18,7 +18,7 @@ if (
     )
 else:
 
-    macro = [("FMT_HEADER_ONLY", "")]
+    macro = []
 
     extra_compile_args = None
     # if os.environ.get("BENCODE_CPP_DEBUG") == "1":
