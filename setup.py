@@ -32,6 +32,7 @@ else:
         include_dirs=["./src/bencode2"],
         define_macros=macro,
         extra_compile_args=extra_compile_args,
+        cxx_std=20,
     )
 
     setup(
